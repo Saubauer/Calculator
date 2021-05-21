@@ -33,9 +33,10 @@ a{
 }
 
 .calculator{
+    margin: 5%;
     padding: 2rem 8%;
     max-width: 460px;
-    background: linear-gradient(to right, gray, lightgray);
+    background: linear-gradient(to right, rgb(255, 0, 140), rgb(164, 67, 184));
     border: 3px solid white;
     border-radius: 2rem;
     display: grid;
@@ -61,7 +62,7 @@ a{
 }
 
 .btn-container > button:hover {
-    background-color: gray;
+    background-color: rgb(164, 67, 184);
     color: whitesmoke;
 }
 
@@ -70,7 +71,7 @@ a{
 }
 
 #operator:hover {
-    background-color: gray;
+    background-color: rgb(164, 67, 184);
     color: whitesmoke;
 }
 
