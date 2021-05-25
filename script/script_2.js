@@ -20,6 +20,7 @@ const operationButtons = document.querySelectorAll("[data-operator]");
 const equalsButton = document.querySelector("[data-equals]");
 const deleteButton = document.querySelector("[data-delete]");
 const clearButton = document.querySelector("[data-clear]");
+const negateButton = document.querySelector("[data-negate]");
 
 const screenInput = document.querySelector(".input");
 const screenOutput = document.querySelector(".output");
@@ -94,6 +95,11 @@ equalsButton.addEventListener("click", button => {
     buttonEqual();
 });
 
+negateButton.addEventListener("click", button => {
+    buttonNegate();
+});
+
+
 // keyboard
 
 window.addEventListener("keydown", button => {
@@ -111,6 +117,17 @@ window.addEventListener("keydown", button => {
 });
 
 //functions
+
+function buttonNegate() {
+	if(screenInput.textContent == "")return;
+	if((screenInput.textContent).charAt(0) === "-"){
+		screenInput.textContent = screenInput.textContent.slice(1);
+		currentNumber = screenInput.textContent;
+	} else {
+		screenInput.textContent = "-" + screenInput.textContent;
+		currentNumber = screenInput.textContent;  
+	}
+}
 
 function buttonDelete() {
     screenInput.textContent = screenInput.textContent.slice(-(screenInput.textContent.length), -1);
